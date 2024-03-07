@@ -1,2 +1,180 @@
 :root {
+  --font-family-default: "Poppins", sans-serif;
+
+  --fw-light: 200;
+  --fw-regular: 400;
+  --fw-bold: 600;
+  --fw-black: 800;
+
+  --fs-400: 0.8125rem;
+  --fs-500: 0.9625rem;
+  --fs-600: 1.2rem;
+  --fs-700: 1.4rem;
+  --fs-800: 1.6rem;
+  --fs-900: 2.5rem;
+
+  /* Primary */
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 64%);
+  --clr-blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --clr-dark-blue: hsl(234, 12%, 34%);
+  --clr-gray-blue: hsl(229, 6%, 66%);
+  --clr-light-gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-family-default);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  padding: 0 2rem;
+}
+
+@media (min-width: 775px) {
+  .container {
+    padding: 0 8rem;
+  }
+}
+
+.headline-group {
+  max-width: 35rem;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.main-headline {
+  font-size: var(--fs-800);
+  font-weight: var(--fw-light);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 775px) {
+  .main-headline {
+    font-size: var(--fs-900);
+  }
+}
+
+.main-headline span {
+  display: block;
+  font-weight: var(--fw-bold);
+}
+
+.sub-headline {
+  color: var(--clr-gray-blue);
+}
+
+.card-group {
+  display: grid;
+
+  gap: 2rem;
+}
+
+@media (min-width: 775px) {
+  .card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1250px) {
+  .card-group {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+.card {
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 5px 20px -3px rgba(0, 0, 0, 0.2);
+  border-top: 5px solid;
+  margin: 0 auto;
+}
+
+@media (max-width: 775px) {
+  .card {
+    max-width: 450px;
+  }
+}
+
+.card h2 {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-bold);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 775px) {
+  .card h2 {
+    font-size: var(--fs-700);
+  }
+}
+
+.card p {
+  color: var(--clr-gray-blue);
+  margin-bottom: 2rem;
+}
+
+.card div img {
+  margin-left: auto;
+}
+
+.card[data-card-subject="supervisor"] {
+  border-color: var(--clr-cyan);
+}
+
+.card[data-card-subject="team-builder"] {
+  border-color: var(--clr-red);
+}
+
+.card[data-card-subject="karma"] {
+  border-color: var(--clr-orange);
+}
+
+.card[data-card-subject="calculator"] {
+  border-color: var(--clr-blue);
+}
+
+@media (min-width: 1250px) {
+  .card[data-card-subject="supervisor"] {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .card[data-card-subject="team-builder"] {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .card[data-card-subject="karma"] {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+  }
+
+  .card[data-card-subject="calculator"] {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
 }
